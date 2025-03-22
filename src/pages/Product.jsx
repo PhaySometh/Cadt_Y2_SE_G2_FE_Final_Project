@@ -1,52 +1,40 @@
-import { useState } from 'react';
-import 'tailwindcss';
-import SearchBox from '../components/SearchBox';
-import AppButton from '../components/AppButton';
-import SortBtn from '../components/SortBtn';
-import DropdownMenu from '../components/DropdownMenu';
+import React, { useState } from "react";
+import AppButton from "../components/AppButton";
 
-export function Product() {
-    const [count, setCount] = useState(0);
+function Product() {
+  const [tasks, setTasks] = useState(["eee", "bbbb", "cccc"]);
 
-    const [newTask, setNewTask] = useState("");
-
-    function addTask(){
-        if(newTask.trim() !== ""){
-            setTasks(t => [...t, newTask]);
-            setNewTask("");
-        }
+  function addTask(newTask) {
+    if (newTask.trim() !== "") {
+      setTasks((prevTasks) => [...prevTasks, newTask]);
     }
+  }
 
-    function deleteTask(index){
-        
-    }
+  return (
+    <div className="p-4">
+      {/* Search and Sort Section */}
+      <div className="flex gap-2">
+        <input
+          type="text"
+          placeholder="Search"
+          className="border p-2 rounded w-60"
+        />
+        <AppButton label="Add new task" addTask={addTask} />
+        <button className="bg-black text-white p-2 rounded">
+          Sort by: Date ▼
+        </button>
+      </div>
 
-    return (
-        <>
-            <div className="bg-gray-200 p-5 rounded-lg">
-                <h1 className="text-black font-bold my-5">
-                    Chlart Task Manager
-                </h1>
-                <div className="flex flex-col gap-5 items-center">
-                    <SearchBox />
-                    <div className="flex justify-center gap-5">
-                        <AppButton label="Add new task" />
-                        <SortBtn />
-                    </div>
-                </div>
-                <div className="mt-5 flex flex-col gap-5 bg-gray-50 p-5 rounded-lg">
-                    <h2 className="text-black font-bold my-5 text-5xl">
-                        Your task
-                    </h2>
-                    <div className="w-full bg-black rounded-lg p-2 text-white flex justify-between items-center">
-                        <div>
-                            <h3 className="text-2xl">Task 1</h3>
-                        </div>
-                        <DropdownMenu />{' '}
-                        {/* This should now be aligned with your task bar */}
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+      {/* Task List */}
+      <ol className="mt-4 list-decimal list-inside bg-gray-100 p-4 rounded">
+        {tasks.map((task, index) => (
+          <li key={index} className="bg-white p-2 rounded-sm shadow-sm my-1">
+            {task}
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
 }
+
+export default Product;
