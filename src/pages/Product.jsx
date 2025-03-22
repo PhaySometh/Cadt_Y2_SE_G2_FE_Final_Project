@@ -8,6 +8,19 @@ import DropdownMenu from '../components/DropdownMenu';
 export function Product() {
     const [count, setCount] = useState(0);
 
+    const [newTask, setNewTask] = useState("");
+
+    function addTask(){
+        if(newTask.trim() !== ""){
+            setTasks(t => [...t, newTask]);
+            setNewTask("");
+        }
+    }
+
+    function deleteTask(index){
+        
+    }
+
     return (
         <>
             <div className="bg-gray-200 p-5 rounded-lg">
@@ -21,8 +34,8 @@ export function Product() {
                         <SortBtn />
                     </div>
                 </div>
-                <div className="flex flex-col gap-5 bg-gray-50 p-5 rounded-lg">
-                    <h2 className="text-black font-bold my-5 text-4xl">
+                <div className="mt-5 flex flex-col gap-5 bg-gray-50 p-5 rounded-lg">
+                    <h2 className="text-black font-bold my-5 text-5xl">
                         Your task
                     </h2>
                     <div className="w-full bg-black rounded-lg p-2 text-white flex justify-between items-center">

@@ -23,8 +23,10 @@
     "express": "^4.21.2",
     "lucide-react": "^0.479.0",
     "mssql": "^11.0.1",
+    "popup": "^0.0.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "reactjs-popup": "^2.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
