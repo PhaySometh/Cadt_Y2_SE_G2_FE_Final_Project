@@ -89,18 +89,20 @@ function Product() {
 
   return (
     <div className="p-6 py-16 flex flex-col justify-center text-center item-center">
-      <div className="bg-gray-200 flex flex-col justify-center text-center item-center rounded-lg p-20 mx-50 ">
-        <h1 className="text-5xl font-bold mb-4">Chlart Task Manager</h1>
+        <div className="bg-gray-200 flex flex-col items-center justify-center text-center rounded-lg p-4 sm:p-8 md:p-20 mx-4 sm:mx-8 md:mx-12">        
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold p-2">Chlart Task Manager</h1>
         <SearchBox value={searchQuery} onSearch={setSearchQuery} />
-        <div className="flex flex-row mt-10 justify-center">
-          <button
-            className="bg-blue-500 text-white px-4 rounded"
-            onClick={() => setShowTaskForm(true)}
-          >
-            + Add Task
-          </button>
-          <SortBtn onSort={setSortOption} />
-        </div>
+        <div className="flex flex-row mt-10">
+            <button
+                className="bg-blue-500 text-white px-4 rounded"
+                onClick={() => setShowTaskForm(true)}
+            >
+                <p className="text-xs">+ Add Task</p>
+            </button>
+            <div className="ml-3"> {/* or ml-2 for less space */}
+                <SortBtn onSort={setSortOption} />
+            </div>
+            </div>
         <div className="mt-4">
           {filteredTasks.length === 0 && searchQuery ? (
             <p className="text-red-500">No tasks found for "{searchQuery}"</p>
