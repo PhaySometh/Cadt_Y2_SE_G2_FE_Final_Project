@@ -9,7 +9,7 @@ function SortBtn({ onSort }) {
     const handleSelection = (option) => {
         setSelectedChoice(`Sort by: ${option}`);
         setIsOpen(false);
-        onSort(option);  // Pass selected sorting option to Product.jsx
+        onSort(option);
     };
 
     return (

@@ -1,6 +1,6 @@
 export function AboutSection() {
     return (
-      <section className="relative lg:mt-0 mt-16 overflow-hidden bg-[F5F5F5] sm:pb-16 lg:pb-20 xl:pb-24">
+      <section className="relative sm:pt-16 lg:pt-20 xl:pt-24 overflow-hidden bg-[F5F5F5] sm:pb-16 lg:pb-20 xl:pb-24">
         <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16">
             <div>
@@ -10,11 +10,9 @@ export function AboutSection() {
               <p className="mt-4 text-lg font-normal text-gray-400 sm:mt-8">
                 We are the sophomore from CADT, under IDT institute study Computer Sciecne specilized in Software Engineer. This is the <span className="font-bold">Chlart Task Manager</span> which is the app that we can keet track our task more efficiently.   
               </p>
-  
-              
-  
+
               <div className="mt-8 sm:mt-12">
-                <p className="text-lg font-normal text-white">Trusted by 50k+ users</p>
+                <p className="text-lg font-normal text-[#1E293B]">Trusted by 50k+ users</p>
                 <div className="flex items-center mt-3">
                   <div className="flex">
                     <svg
@@ -43,7 +41,7 @@ export function AboutSection() {
                     </svg>
                     {/* Repeat other SVGs as needed */}
                   </div>
-                  <span className="ml-2 text-base font-normal text-white">4.1/5</span>
+                  <span className="ml-2 text-base font-normal text-[#1E293B]">4.1/5</span>
                   <span className="ml-1 text-base font-normal text-gray-500">(14k Reviews)</span>
                 </div>
               </div>
