@@ -18,8 +18,8 @@ export function NavHeader() {
                   <NavLink
                     className={({ isActive }) => {
                       console.log("Home isActive:", isActive); // Debug log
-                      return `text-gray-500 transition hover:text-[#3B82F6] font-bold ${
-                        isActive ? "text-[#3B82F6]" : ""
+                      return `transition hover:text-[#3B82F6] font-bold ${
+                        isActive ? "text-[#3B82F6]" : "text-gray-500"
                       }`;
                     }}
                     to="/"
@@ -32,8 +32,8 @@ export function NavHeader() {
                   <NavLink
                     className={({ isActive }) => {
                       console.log("About isActive:", isActive); // Debug log
-                      return `text-gray-500 transition hover:text-[#3B82F6] font-bold ${
-                        isActive ? "text-[#3B82F6]" : ""
+                      return `transition hover:text-[#3B82F6] font-bold ${
+                        isActive ? "text-[#3B82F6]" : "text-gray-500"
                       }`;
                     }}
                     to="/about"
@@ -46,8 +46,8 @@ export function NavHeader() {
                   <NavLink
                     className={({ isActive }) => {
                       console.log("Product isActive:", isActive); // Debug log
-                      return `text-gray-500 transition hover:text-[#3B82F6] font-bold ${
-                        isActive ? "text-[#3B82F6]" : ""
+                      return `transition hover:text-[#3B82F6] font-bold ${
+                        isActive ? "text-[#3B82F6]" : "text-gray-500"
                       }`;
                     }}
                     to="/product"
