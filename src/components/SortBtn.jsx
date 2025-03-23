@@ -19,19 +19,19 @@ function SortBtn({ onSort }) {
                 open={isOpen}
                 onToggle={(e) => setIsOpen(e.target.open)}
             >
-                <summary className="btn font-medium bg-[#1a1a1a] text-white flex items-center justify-between">
+                <summary className="btn font-medium bg-[#1a1a1a] text-white flex items-center justify-between text-xs">
                     <span>{selectedChoice}</span>
-                    {isOpen ? <ChevronUp /> : <ChevronDown />}
+                    {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                 </summary>
-                <ul className="font-medium bg-[#1a1a1a] border-2 border-white menu dropdown-content rounded-box z-[1] w-[155px] p-2 shadow-lg text-white">
+                <ul className="font-medium bg-[#1a1a1a] border-2 border-white menu dropdown-content rounded-box z-[1] w-[155px] p-2 shadow-lg text-white text-xs">
                     <li>
                         <a onClick={() => handleSelection('Date')}>
-                            <p className="text-[#def]">Date</p>
+                            <p className="text-[#def] text-xs">Date</p>
                         </a>
                     </li>
                     <li>
                         <a onClick={() => handleSelection('Name')}>
-                            <p className="text-[#def]">Name</p>
+                            <p className="text-[#def] text-xs">Name</p>
                         </a>
                     </li>
                 </ul>

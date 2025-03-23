@@ -1,4 +1,3 @@
-// src/components/SearchBox.jsx
 import { useState } from "react";
 import { Search } from "lucide-react";
 
@@ -11,16 +10,19 @@ function SearchBox({ value, onSearch }) {
 
   const handleClear = () => {
     setQuery("");
-    onSearch(""); // Reset search when cleared
+    onSearch(""); 
   };
 
   return (
-    <div className="flex items-center justify-center mt-10">
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+    <div className="flex items-center mt-6">
+      <div className="relative flex-1 max-w-md">
+        <Search 
+          size={20} 
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" 
+        />
         <input
           type="text"
-          className="pl-10 pr-3 py-2 border rounded w-80"
+          className="w-full pl-10 py-2 pr-3 border rounded-lg bg-white text-sm"
           placeholder="Search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -28,14 +30,14 @@ function SearchBox({ value, onSearch }) {
         />
       </div>
       <button
-        className="ml-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg text-sm"
         onClick={handleSearch}
       >
         Search
       </button>
       {query && (
         <button
-          className="ml-2 px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+          className="ml-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm"
           onClick={handleClear}
         >
           Clear
