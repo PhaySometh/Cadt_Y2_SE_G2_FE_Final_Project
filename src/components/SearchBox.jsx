@@ -1,47 +1,48 @@
-import React, { useState } from 'react';
+// src/components/SearchBox.jsx
+import { useState } from "react";
+import { Search } from "lucide-react";
 
-function SearchBox({ onSearch }) {
-    const [query, setQuery] = useState("");
+function SearchBox({ value, onSearch }) {
+  const [query, setQuery] = useState(value || "");
 
-    const handleChange = (e) => {
-        setQuery(e.target.value);
-        onSearch(e.target.value); // Live search while typing
-    };
+  const handleSearch = () => {
+    onSearch(query);
+  };
 
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            onSearch(query); // Trigger search when pressing enter
-        }
-    };
+  const handleClear = () => {
+    setQuery("");
+    onSearch(""); // Reset search when cleared
+  };
 
-    return (
-        <label className="input flex items-center gap-2 border p-2 rounded shadow-sm">
-            <svg
-                className="h-5 w-5 text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-            >
-                <g
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    strokeWidth="2.5"
-                    fill="none"
-                    stroke="currentColor"
-                >
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.3-4.3"></path>
-                </g>
-            </svg>
-            <input
-                type="search"
-                placeholder="Search..."
-                value={query}
-                onChange={handleChange}
-                onKeyPress={handleKeyPress}
-                className="outline-none w-full"
-            />
-        </label>
-    );
+  return (
+    <div className="flex items-center justify-center mt-10">
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        <input
+          type="text"
+          className="pl-10 pr-3 py-2 border rounded w-80"
+          placeholder="Search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && handleSearch()}
+        />
+      </div>
+      <button
+        className="ml-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        onClick={handleSearch}
+      >
+        Search
+      </button>
+      {query && (
+        <button
+          className="ml-2 px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+          onClick={handleClear}
+        >
+          Clear
+        </button>
+      )}
+    </div>
+  );
 }
 
 export default SearchBox;
