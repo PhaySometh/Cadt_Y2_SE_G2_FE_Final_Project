@@ -61,7 +61,8 @@ function Product() {
 
   const updateTask = (title, description, date) => {
     setTasks(tasks.map((t) =>
-      t === showTaskForm ? { ...t, name: title, description, date } : t
+      t === showTaskForm ? { ...t, name: 
+        title, description, date } : t
     ));
     setShowTaskForm(false);
   };
@@ -88,13 +89,13 @@ function Product() {
   };
 
   return (
-    <div className="p-6 py-16 flex flex-col justify-center text-center item-center">
+    <div className="p-6 py-16 flex flex-col justify-center text-center item-center bg-gray-100">
         <div className="bg-gray-200 flex flex-col items-center justify-center text-center rounded-lg p-4 sm:p-8 md:p-20 mx-4 sm:mx-8 md:mx-12">        
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold p-2">Chlart Task Manager</h1>
+        <h1 className="text-gray-800 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold p-2">Chlart Task Manager</h1>
         <SearchBox value={searchQuery} onSearch={setSearchQuery} />
         <div className="flex flex-row mt-10">
             <button
-                className="bg-blue-500 text-white px-4 rounded"
+                className="bg-blue-500 text-white px-4 rounded cursor-pointer"
                 onClick={() => setShowTaskForm(true)}
             >
                 <p className="text-xs">+ Add Task</p>
@@ -111,7 +112,7 @@ function Product() {
               {sortedTasks.map((task, index) => (
                 <li
                   key={index}
-                  className="flex justify-between items-center bg-white p-2 rounded shadow-sm my-1 cursor-pointer"
+                  className="text-gray-500 flex justify-between items-center bg-white p-2 rounded shadow-sm my-1 cursor-pointer"
                   onClick={() => setShowTaskDetails(task)}
                 >
                   <div className="flex-1 flex items-center">
@@ -125,13 +126,16 @@ function Product() {
                         (Found in description)
                       </span>
                     )}
+                  <div className="text-sm ml-5 lg:ml-10 text-gray-400">
+                      {task.date ? new Date(task.date).toLocaleDateString() : 'No date set'}
+                    </div>
                   </div>
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       toggleComplete(task);
                     }}
-                    className={`ml-3 px-2 py-1 rounded ${task.isComplete ? "bg-green-500" : "bg-gray-200"}`}
+                    className={`ml-3 px-2 py-1 rounded ${task.isComplete ? "bg-green-500 text-white" : "bg-gray-200 text-gray-400"}`}
                   >
                     {task.isComplete ? "✔ Done" : "Incomplete"}
                   </button>
