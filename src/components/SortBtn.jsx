@@ -19,7 +19,7 @@ function SortBtn({ onSort }) {
                 open={isOpen}
                 onToggle={(e) => setIsOpen(e.target.open)}
             >
-                <summary className="btn font-medium bg-[#1a1a1a] text-white flex items-center justify-between text-xs">
+                <summary className="btn font-medium bg-[#1a1a1a] text-white flex items-center justify-between text-xs lg:text-md">
                     <span>{selectedChoice}</span>
                     {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                 </summary>

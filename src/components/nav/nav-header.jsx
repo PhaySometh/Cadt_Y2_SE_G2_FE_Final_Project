@@ -61,14 +61,14 @@ export function NavHeader() {
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
                 <a
-                  className="block rounded-md bg-[#7896f0] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#3B82F6]"
+                  className="block rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-600"
                   href="#"
                 >
                   Login
                 </a>
 
                 <a
-                  className="hidden rounded-md bg-gray-200 px-5 py-2.5 text-sm font-medium text-[#7896f0] transition hover:text-[#3B82F6] sm:block"
+                  className="hidden rounded-md bg-gray-200 px-5 py-2.5 text-sm font-medium text-[#7896f0] transition hover:bg-gray-300 hover:text-[#3B82F6] sm:block"
                   href="#"
                 >
                   Register

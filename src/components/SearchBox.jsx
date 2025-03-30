@@ -22,7 +22,7 @@ function SearchBox({ value, onSearch }) {
         />
         <input
           type="text"
-          className="w-full pl-10 py-2 pr-3 border rounded-lg bg-white text-sm"
+          className="placeholder-gray-400 w-full pl-10 py-2 pr-3 border rounded-lg bg-white text-sm"
           placeholder="Search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
