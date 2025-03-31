@@ -20,7 +20,7 @@ function TaskDetails({ task, onClose, onEdit, onDuplicate, onDelete }) {
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-30">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md ">
         <h2 className="text-xl font-bold text-blue-500">{task.name}</h2>
         <div className="my-8 ">
           <h2 className="text-lg text-blue-400 text-start">Description</h2>

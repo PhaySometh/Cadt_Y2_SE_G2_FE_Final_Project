@@ -113,11 +113,11 @@ function Product() {
                 <li
                   key={index}
                   className="text-gray-500 flex justify-between
-                  items-center bg-white p-2 rounded shadow-sm my-1
-                   cursor-pointer"
+                  items-center bg-white p-2 rounded shadow-sm m-2
+                  cursor-pointer"
                   onClick={() => setShowTaskDetails(task)}
                 >
-                  <div className="flex-1 flex items-center">
+                  <div className="flex-1 flex justify-between items-center">
                     <span
                       className={`mr-2 ${task.isComplete ? "line-through text-gray-500" : ""}`}
                     >
