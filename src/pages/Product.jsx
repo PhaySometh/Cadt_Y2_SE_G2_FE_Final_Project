@@ -112,7 +112,9 @@ function Product() {
               {sortedTasks.map((task, index) => (
                 <li
                   key={index}
-                  className="text-gray-500 flex justify-between items-center bg-white p-2 rounded shadow-sm my-1 cursor-pointer"
+                  className="text-gray-500 flex justify-between
+                  items-center bg-white p-2 rounded shadow-sm my-1
+                   cursor-pointer"
                   onClick={() => setShowTaskDetails(task)}
                 >
                   <div className="flex-1 flex items-center">
