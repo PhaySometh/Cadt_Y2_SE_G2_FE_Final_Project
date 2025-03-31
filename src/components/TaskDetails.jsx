@@ -21,10 +21,10 @@ function TaskDetails({ task, onClose, onEdit, onDuplicate, onDelete }) {
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-30">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-xl font-bold">{task.name}</h2>
+        <h2 className="text-xl font-bold text-blue-500">{task.name}</h2>
         <div className="my-8 ">
-          <h2 className="text-lg text-gray-500 text-start ">Description</h2>
-          <p className="border-2 border-gray-200 rounded-lg p-4 text-start">{task.description}</p>
+          <h2 className="text-lg text-blue-400 text-start">Description</h2>
+          <p className="border-3 text-gray-400 border-gray-200 rounded-lg p-4 text-start">{task.description}</p>
         </div>
         <p className="mt-2 text-gray-500">📅Date: {task.date}</p>
 

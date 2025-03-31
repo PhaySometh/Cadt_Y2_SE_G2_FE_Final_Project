@@ -59,7 +59,7 @@ function TaskForm({ onSave, onCancel, editingTask }) {
         <label className="block mb-1 font-bold text-start text-blue-400">Date</label>
         <input
           type="date"
-          className="w-full p-2 border mb-4 rounded focus:border-blue-600 focus:outline-none text-gray-700"
+          className="w-full p-2 border mb-4 rounded focus:border-blue-600 focus:outline-none text-gray-700 z-1"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
