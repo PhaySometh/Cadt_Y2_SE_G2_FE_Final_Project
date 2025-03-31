@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // pages
 import { Home } from './pages/Home';
 import Product from './pages/Product';
@@ -14,6 +14,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="/product" element={<Product />} />
                     <Route path="/about" element={<AboutUs />} />
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Route>
             </Routes>
         </BrowserRouter>
