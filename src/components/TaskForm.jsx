@@ -33,7 +33,7 @@ function TaskForm({ onSave, onCancel, editingTask }) {
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-40"> {/* Changed to z-40 */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md m-6"
       >
         <h2 className="text-xl font-bold mb-4 text-blue-600">{editingTask ? "Edit Task" : "Add New Task"}</h2>
 
